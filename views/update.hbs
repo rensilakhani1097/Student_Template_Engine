@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Document</title>
+</head>
+<body>
+     <form action="/update" method="post">
+        <div class="container form-row">
+            <div class="form-group col-md-6">
+                <div class="form-group col-md-6" >
+                    <input type="hidden" name="_id" value={{stud._id}} />
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" value={{stud.name}}>
+
+                    <label>Course</label>
+                    <input type="text" class="form-control" name="course" value={{stud.course}}>
+
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" value={{stud.email}}>
+
+
+                    <label>Phone</label>
+                    <input type="text" class="form-control" name="phone" value="{{stud.phone}}">
+
+                    <label>Marks-Maths</label>
+                    <input type="number" class="form-control" name="m1" value={{stud.m1}}>
+
+                    <label>Marks-Physics</label>
+                    <input type="number" class="form-control" name="m2" value={{stud.m2}}>
+
+                    <label>Marks-Chemistry</label>
+                    <input type="number" class="form-control" name="m3" value={{stud.m3}}>
+
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form> 
+</body>
+</html>

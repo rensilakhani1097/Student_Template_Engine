@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Marksheet Result Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            *{
+                background-color: rgb(171, 167, 220);
+                transition: all .20s ease;
+            }
+
+            #content{
+                width: auto;
+                font-family:FontAwesome;
+                margin-top:5%;
+                margin-left: 10%;
+                text-align: center;
+            }
+
+            #top-nav-bar{
+                border-bottom:1px solid red;
+                border-top:1px solid red;
+                padding: 10px;
+                text-align: center;
+                font-family:FontAwesome;
+                font-weight:400;
+                font-size:12px;
+                width: 100%;
+                display: flex;
+                height: auto;
+                box-sizing: border-box;
+                position: relative;
+                margin: 0 auto;
+                overflow: visible;
+                justify-content: space-between;
+                z-index: 10;
+            }
+
+            #web-name{
+                
+                padding-left: 45%;
+                font-size:25px;               
+                font-family: Arial;
+            }
+            #main-menu{
+                float: right;
+                padding-left:5%;
+                display: block;
+                font-family: Arial;
+            }
+            #print, #reset{
+                padding:0px;
+            }
+            a{
+                padding-left: 25px;
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+            a:hover{
+                color: red;
+            }
+            li{
+                display: inline-block;
+            }
+            #mob-nav-open, #mob-nav-close{
+                top:20px;
+                right: 10px;
+                position: absolute;
+                padding:0 0 0 20px;
+                display: none;
+                transition: 2s;
+            }
+            table{
+                background-color: gainsboro;
+                border: 0px;
+                width: 50%;
+                margin-left: 25%;
+                margin-right: 25%;
+                text-align: center;
+            }
+            table tr{
+                color:black;
+            }
+            th{
+                text-align: center;
+                background-color:#DAA520;
+            }
+            td{
+                text-align: center;
+                background-color:#FFFACD
+            }
+            #m, #t{
+                background-color: #EEE8AA;
+            }
+            span{
+                margin-right: 0px;
+                color:red;
+                font-weight: bold;
+                width:auto;
+                height: auto;
+                font-size: 1.3vw;
+            }
+            #search, input, button{
+                font-size: 1.2vw;
+                size: 1.5vw;
+            }
+            button{
+                cursor:pointer;
+            }
+
+            @media  screen and (max-width:850px){
+
+                #web-name{
+                    padding-left: 0px;
+                }
+                #main-menu{
+                    display:none;
+                }
+                #mob-nav-open{
+                    display: block;
+                }
+                #top-nav-bar{
+                    display: block;
+                }
+                #top-nav-bar{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    display: flex;
+
+                }
+                #main-menu{
+                    width: 100%;
+                    height: 100%;
+                    transition: 1s ease;
+                    z-index: 20;
+                    text-align: left;
+                }
+                li{
+                    display:block;
+                    padding: 10px;
+                    border-top: 1px solid red;
+                    font-family: FontAwesome;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+                li > a{
+                    display: inline-block;
+                    width: 98%;
+                }
+            }
+
+        </style>   
+
+    </head>
+    <body >
+    <div class="container">
+        <!-- TOP NAVIGATION BAR     -->
+        <div class="top-nav-bar" id="top-nav-bar">
+            <!-- WEBSITE NAME OR LOGO -->
+            <div class="web-name" id="web-name" title="website">
+               <a>MARKSHEET RESULT</a> <br>
+               <a style="color: blue; font-size: 10px;">marksheet result page</a> 
+            </div>
+          
+        </div> 
+
+
+        <!-- Main Content -->
+        <div id="content">
+          
+            <br><br>
+
+               <table >
+                <tr >
+                    <th id="t">Admission Name </th>
+                    <td> {{stud.name}} </td>
+                </tr>
+                <tr>
+                    <th id="t"> Course </th>
+                    <td> {{stud.course}} </td>
+                </tr>
+                <tr>
+                    <th id="t"> Phone </th>
+                    <td> {{stud.phone}} </td>
+                </tr>
+               </table>
+
+               <table>
+                <tr>
+                    <th> Subject  </th><br>
+                    <th> Marks  </th><br>
+
+                </tr>
+
+                <tr>
+                    <td> Maths </td>
+                    <td> {{stud.m1}} </td>                   
+                </tr>
+                <tr>
+                    <td> Physics </td>
+                    <td> {{stud.m2}} </td>                   
+                </tr>
+                <tr>
+                    <td> Chemistry </td>
+                    <td> {{stud.m3}} </td>                   
+                </tr>
+                 <tr>
+                    <b><td>Total</td></b>
+                    <td> {{stud.total}} </td>                   
+                </tr>
+                 <tr>
+                    <b><td>Percentage</td></b>
+                    <td> {{stud.per}}%</td>                   
+                </tr>            
+                
+               </table>
+               <br>
+            <a  href="/">Back To Home</a>
+
+        </div>    
+    </div>
+
+    </body>
+    </html>
